@@ -13,8 +13,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-white/60">
-              Premium herrfrisør på Grønland i Oslo. Tradisjonelt håndverk,
-              moderne stil.
+              Frisørsalong på Grønland i Oslo. Hårklipp, skinfade og skjegg
+              for kvinner, menn og barn.
             </p>
           </div>
 
