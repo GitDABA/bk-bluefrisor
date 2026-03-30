@@ -38,11 +38,11 @@ export default function HomePage() {
                     <span className="text-blue-primary">FRISØR</span>
                   </h1>
                   <p className="mt-4 text-lg text-white/80 lg:text-xl">
-                    Premium herrfrisør på Grønland i Oslo
+                    Frisørsalong på Grønland i Oslo
                   </p>
                   <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
                     <span className="inline-block h-2 w-2 rounded-full bg-green-400" aria-hidden="true" />
-                    Drop in — ingen timebestilling nødvendig
+                    Drop in. Ingen timebestilling nødvendig
                   </div>
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <a
@@ -83,7 +83,7 @@ export default function HomePage() {
                 BLUE <span className="text-blue-primary">FRISØR</span>
               </h1>
               <p className="mt-2 text-base text-white/80">
-                Premium herrfrisør — Grønland, Oslo
+                Frisørsalong på Grønland, Oslo
               </p>
               <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" aria-hidden="true" />
@@ -95,7 +95,7 @@ export default function HomePage() {
                   className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-primary px-6 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-deep"
                 >
                   <PhoneIcon />
-                  Ring oss — 46 37 23 23
+                  Ring oss: 46 37 23 23
                 </a>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function HomePage() {
                 Våre tjenester
               </h2>
               <p className="mt-3 text-lg text-foreground/60">
-                Profesjonell herrfrisør — fra klassisk klipp til presise fades.
+                Profesjonell frisør for alle. Fra klassisk klipp til presise fades.
               </p>
 
               <div className="mt-8 grid gap-2">
@@ -204,7 +204,7 @@ export default function HomePage() {
               Fra salongen
             </h2>
             <p className="mt-3 text-lg text-foreground/60">
-              Et glimt inn i Blue Frisør — der tradisjonelt håndverk møter
+              Et glimt inn i Blue Frisør. Tradisjonelt håndverk møter
               moderne Oslo.
             </p>
           </div>
@@ -268,7 +268,7 @@ export default function HomePage() {
             Klar for en ny stil?
           </h2>
           <p className="mt-4 text-lg text-white/80">
-            Bare stikk innom — vi tar drop in. Eller ring oss direkte.
+            Bare stikk innom. Vi tar drop in, eller ring oss direkte.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a

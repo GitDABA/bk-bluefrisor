@@ -77,7 +77,7 @@ export default function GalleriPage() {
             Galleri
           </h1>
           <p className="mt-4 max-w-xl text-lg text-white/80">
-            Velkommen inn — et glimt av salongen på Grønlandsleiret 18.
+            Velkommen inn. Et glimt av salongen på Grønlandsleiret 18.
           </p>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function GalleriPage() {
             Vil du se salongen selv?
           </h2>
           <p className="mt-3 text-foreground/60">
-            Stikk innom — drop in er alltid velkomment.
+            Stikk innom. Drop in er alltid velkomment.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <a

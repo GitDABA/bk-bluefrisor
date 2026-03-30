@@ -67,7 +67,7 @@ export default function KontaktPage() {
                 <div>
                   <h3 className="text-lg font-bold">Drop in velkomment</h3>
                   <p className="text-sm text-white/80">
-                    Ingen timebestilling nødvendig — bare stikk innom.
+                    Ingen timebestilling nødvendig. Bare stikk innom.
                   </p>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function KontaktPage() {
             Vi sees på Grønland
           </h2>
           <p className="mt-3 text-white/80">
-            Bare stikk innom — eller ring oss på forhånd.
+            Bare stikk innom, eller ring oss på forhånd.
           </p>
           <a
             href="tel:+4746372323"

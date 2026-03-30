@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Tjenester og priser",
   description:
-    "Komplett prisliste for Blue Frisør — herreklipp, skinfade, skjegg og mer. Drop in på Grønland i Oslo.",
+    "Komplett prisliste for Blue Frisør. Hårklipp, skinfade, skjegg og mer. Drop in på Grønland i Oslo.",
 };
 
 interface Service {
@@ -24,19 +24,19 @@ const services: Service[] = [
     name: "Skinfade",
     price: "450,-",
     description:
-      "Presis skinfade fra null og opp — ren overgang, skarpe linjer. Vår mest populære tjeneste.",
+      "Presis skinfade fra null og opp. Ren overgang, skarpe linjer. Vår mest populære tjeneste.",
   },
   {
     name: "Hårklipp og skjegg",
     price: "650,-",
     description:
-      "Komplett pakke: herreklipp kombinert med skjeggtrimming og -forming. Full makeover.",
+      "Komplett pakke: hårklipp kombinert med skjeggtrimming og -forming. Full makeover.",
   },
   {
     name: "Skinfade barn",
     price: "400,-",
     description:
-      "Skinfade for gutter — samme presisjon som for voksne, med tålmodighet og god stemning.",
+      "Skinfade for barn. Samme presisjon som for voksne, med tålmodighet og god stemning.",
   },
   {
     name: "Barneklipp (under 12)",
@@ -83,7 +83,7 @@ export default function TjenesterPage() {
             Tjenester & priser
           </h1>
           <p className="mt-4 max-w-xl text-lg text-white/80">
-            Alt du trenger — fra en enkel trim til komplett makeover. Faste
+            Alt du trenger. Fra en enkel trim til komplett makeover. Faste
             priser, ingen overraskelser.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function TjenesterPage() {
             <ul className="mt-4 grid gap-3 text-foreground/70 sm:grid-cols-2">
               <li className="flex items-start gap-2">
                 <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-primary" aria-hidden="true" />
-                Vi tar drop in — ingen timebestilling nødvendig
+                Vi tar drop in. Ingen timebestilling nødvendig
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-blue-primary" aria-hidden="true" />
@@ -154,7 +154,7 @@ export default function TjenesterPage() {
             Klar for en time?
           </h2>
           <p className="mt-3 text-white/80">
-            Ring oss eller stikk innom salongen — vi tar drop in.
+            Ring oss eller stikk innom. Vi tar drop in.
           </p>
           <a
             href="tel:+4746372323"

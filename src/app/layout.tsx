@@ -20,11 +20,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Blue Frisør — Premium Herrfrisør i Oslo",
+    default: "Blue Frisør i Oslo",
     template: "%s | Blue Frisør",
   },
   description:
-    "Blue Frisør — Premium herrfrisør på Grønland i Oslo. Herreklipp, skinfade, skjegg og mer. Ring oss: +47 46 37 23 23.",
+    "Blue Frisør på Grønland i Oslo. Hårklipp, skinfade, skjegg og mer. Ring oss: +47 46 37 23 23.",
   keywords: [
     "frisør oslo",
     "herrfrisør oslo",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     "herreklipp oslo",
   ],
   openGraph: {
-    title: "Blue Frisør — Premium Herrfrisør i Oslo",
+    title: "Blue Frisør i Oslo",
     description:
-      "Premium herrfrisør på Grønland i Oslo. Herreklipp, skinfade, skjegg og mer.",
+      "Frisørsalong på Grønland i Oslo. Hårklipp, skinfade, skjegg og mer.",
     locale: "nb_NO",
     type: "website",
     siteName: "Blue Frisør",
