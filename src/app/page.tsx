@@ -204,8 +204,7 @@ export default function HomePage() {
               Fra salongen
             </h2>
             <p className="mt-3 text-lg text-foreground/60">
-              Et glimt inn i Blue Frisør. Tradisjonelt håndverk møter
-              moderne Oslo.
+              Et glimt inn i salongen på Grønlandsleiret 18.
             </p>
           </div>
 
@@ -265,7 +264,7 @@ export default function HomePage() {
         </div>
         <div className="relative mx-auto max-w-4xl px-4 py-16 text-center sm:py-24">
           <h2 className="font-heading text-3xl font-bold text-white sm:text-5xl">
-            Klar for en ny stil?
+            Stikk innom på Grønland
           </h2>
           <p className="mt-4 text-lg text-white/80">
             Bare stikk innom. Vi tar drop in, eller ring oss direkte.

@@ -151,7 +151,7 @@ export default function TjenesterPage() {
       <section className="bg-blue-primary" aria-label="Ring oss">
         <div className="mx-auto max-w-4xl px-4 py-12 text-center sm:py-16">
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-            Klar for en time?
+            Vi tar drop in
           </h2>
           <p className="mt-3 text-white/80">
             Ring oss eller stikk innom. Vi tar drop in.
