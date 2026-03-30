@@ -17,14 +17,14 @@ export default function HomePage() {
     <>
       {/* ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-[var(--black)]" aria-label="Hero">
-        {/* Desktop hero: barber_action_1 — the powerful direct gaze */}
+        {/* Desktop hero: interior_3 — intimate single station */}
         <div className="hidden md:block">
           <div className="relative h-[85vh] min-h-[600px]">
             <Image
-              src="/images/barber_action_1.jpg"
-              alt="Frisør hos Blue Frisør styler en kundes hår"
+              src="/images/interior_3.jpg"
+              alt="Frisørstol med belyst speil hos Blue Frisør"
               fill
-              className="object-cover object-top"
+              className="object-cover"
               priority
               sizes="100vw"
             />
