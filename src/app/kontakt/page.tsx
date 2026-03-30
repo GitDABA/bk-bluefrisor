@@ -61,8 +61,8 @@ export default function KontaktPage() {
 
               {/* Drop in badge */}
               <div className="mt-4 flex items-center gap-4 rounded-xl bg-blue-primary p-6 text-white">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20 text-2xl">
-                  🚶
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="1" /><path d="m9 20 3-6 3 6" /><path d="m6 8 6 2 6-2" /><path d="M12 10v4" /></svg>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">Drop in velkomment</h3>

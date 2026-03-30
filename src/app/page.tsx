@@ -24,7 +24,7 @@ export default function HomePage() {
               src="/images/barber_action_1.jpg"
               alt="Frisør hos Blue Frisør styler en kundes hår"
               fill
-              className="object-cover object-[center_5%]"
+              className="object-cover object-[center_top]"
               priority
               sizes="100vw"
             />
@@ -107,21 +107,21 @@ export default function HomePage() {
       <section className="border-b border-blue-light bg-blue-lighter" aria-label="Fakta om Blue Frisør">
         <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-blue-light sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           <div className="flex items-center justify-center gap-3 px-6 py-5">
-            <span className="text-2xl" aria-hidden="true">★</span>
+            <StarIcon />
             <div>
               <p className="text-lg font-bold text-foreground">4.8 / 5</p>
               <p className="text-sm text-foreground/60">118+ Google-anmeldelser</p>
             </div>
           </div>
           <div className="flex items-center justify-center gap-3 px-6 py-5">
-            <span className="text-2xl" aria-hidden="true">📍</span>
+            <MapPinIcon />
             <div>
               <p className="text-lg font-bold text-foreground">Grønland, Oslo</p>
               <p className="text-sm text-foreground/60">Grønlandsleiret 18</p>
             </div>
           </div>
           <div className="flex items-center justify-center gap-3 px-6 py-5">
-            <span className="text-2xl" aria-hidden="true">🚶</span>
+            <WalkInIcon />
             <div>
               <p className="text-lg font-bold text-foreground">Drop in</p>
               <p className="text-sm text-foreground/60">Ingen timebestilling nødvendig</p>
@@ -288,6 +288,34 @@ export default function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function StarIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-primary" aria-hidden="true">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  );
+}
+
+function MapPinIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-primary" aria-hidden="true">
+      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function WalkInIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-primary" aria-hidden="true">
+      <circle cx="12" cy="5" r="1" />
+      <path d="m9 20 3-6 3 6" />
+      <path d="m6 8 6 2 6-2" />
+      <path d="M12 10v4" />
+    </svg>
   );
 }
 
