@@ -27,12 +27,13 @@ export const metadata: Metadata = {
     "Blue Frisør på Grønland i Oslo. Hårklipp, skinfade, skjegg og mer. Ring oss: +47 46 37 23 23.",
   keywords: [
     "frisør oslo",
-    "herrfrisør oslo",
+    "frisør grønland",
     "barber oslo",
     "skinfade oslo",
     "blue frisør",
-    "grønland frisør",
-    "herreklipp oslo",
+    "hårklipp oslo",
+    "barneklipp oslo",
+    "herrfrisør oslo",
   ],
   openGraph: {
     title: "Blue Frisør i Oslo",

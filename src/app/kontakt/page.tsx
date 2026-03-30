@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Finn Blue Frisør — Grønlandsleiret 18, Oslo. Ring +47 46 37 23 23 eller stikk innom. Drop in velkomment.",
+    "Finn Blue Frisør på Grønlandsleiret 18, Oslo. Ring +47 46 37 23 23 eller stikk innom. Ingen timebestilling nødvendig.",
 };
 
 export default function KontaktPage() {
@@ -26,8 +26,7 @@ export default function KontaktPage() {
             Kontakt oss
           </h1>
           <p className="mt-4 max-w-xl text-lg text-white/80">
-            Stikk innom, ring oss, eller finn veien hit. Drop in er alltid
-            velkomment.
+            Stikk innom, ring oss, eller finn veien hit. Ingen timebestilling nødvendig.
           </p>
         </div>
       </section>
@@ -169,7 +168,7 @@ export default function KontaktPage() {
                 <div className="absolute bottom-4 left-4">
                   <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-foreground backdrop-blur-sm">
                     <span className="inline-block h-2 w-2 rounded-full bg-green-500" aria-hidden="true" />
-                    Drop in velkomment
+                    Bare stikk innom
                   </span>
                 </div>
               </div>

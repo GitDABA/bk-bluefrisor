@@ -18,7 +18,7 @@ const services: Service[] = [
     name: "Herreklipp",
     price: "400,-",
     description:
-      "Klassisk herreklipp tilpasset ditt ansikt og stil. Inkluderer konsultasjon, klipp og styling.",
+      "Klassisk klipp tilpasset ditt ansikt og stil. Inkluderer konsultasjon, klipp og styling.",
   },
   {
     name: "Skinfade",
@@ -48,7 +48,7 @@ const services: Service[] = [
     name: "Pensjonist (herre)",
     price: "350,-",
     description:
-      "Herreklipp til redusert pris for pensjonister. Samme kvalitet, lavere pris.",
+      "Klipp til redusert pris for pensjonister. Samme kvalitet, lavere pris.",
   },
   {
     name: "Skjegg",

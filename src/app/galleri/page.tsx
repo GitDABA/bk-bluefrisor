@@ -115,7 +115,7 @@ export default function GalleriPage() {
             Vil du se salongen selv?
           </h2>
           <p className="mt-3 text-foreground/60">
-            Stikk innom. Drop in er alltid velkomment.
+            Stikk innom. Ingen timebestilling nødvendig.
           </p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <a
