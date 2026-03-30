@@ -1,23 +1,174 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Star,
+  MapPin,
+  Phone,
+  ArrowRight,
+  Scissors,
+  DoorOpen,
+  Smile,
+  Clock,
+  Package,
+  Baby,
+  UserRound,
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-const services = [
-  { name: "Herreklipp", price: "400,-" },
-  { name: "Skinfade", price: "450,-" },
-  { name: "Hårklipp og skjegg", price: "650,-" },
-  { name: "Skinfade barn", price: "400,-" },
-  { name: "Barneklipp (under 12)", price: "350,-" },
-  { name: "Pensjonist (herre)", price: "350,-" },
-  { name: "Skjegg", price: "350,-" },
-  { name: "Vask", price: "50,-" },
+/* ────────────────────────────────────────────────────────────────────────────
+   Data
+   ────────────────────────────────────────────────────────────────────────── */
+
+interface ServiceItem {
+  name: string;
+  description: string;
+  price: string;
+  icon: React.ReactNode;
+}
+
+const services: ServiceItem[] = [
+  {
+    name: "Herreklipp",
+    description: "Klassisk klipp tilpasset din stil.",
+    price: "fra 350 kr",
+    icon: <Scissors className="h-6 w-6" aria-hidden="true" />,
+  },
+  {
+    name: "Skinfade",
+    description: "Presis fade med ren finish.",
+    price: "fra 380 kr",
+    icon: <Scissors className="h-6 w-6" aria-hidden="true" />,
+  },
+  {
+    name: "Skjegg",
+    description: "Trimming og forming av skjegg.",
+    price: "fra 200 kr",
+    icon: <UserRound className="h-6 w-6" aria-hidden="true" />,
+  },
+  {
+    name: "Pakke klipp + skjegg",
+    description: "Full behandling i en gang.",
+    price: "fra 500 kr",
+    icon: <Package className="h-6 w-6" aria-hidden="true" />,
+  },
+  {
+    name: "Barneklipp",
+    description: "Rolig og hyggelig opplevelse for barn.",
+    price: "fra 280 kr",
+    icon: <Baby className="h-6 w-6" aria-hidden="true" />,
+  },
+  {
+    name: "Pensjonist",
+    description: "Herreklipp til redusert pris.",
+    price: "fra 280 kr",
+    icon: <Clock className="h-6 w-6" aria-hidden="true" />,
+  },
 ];
+
+interface Testimonial {
+  quote: string;
+  name: string;
+  location: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Alltid bra klipp her. Stikker innom uten å bestille time, og det går alltid fint.",
+    name: "Magnus",
+    location: "Oslo",
+  },
+  {
+    quote:
+      "Beste barberen jeg har vært hos. Presist arbeid og hyggelig stemning.",
+    name: "Tariq",
+    location: "Oslo",
+  },
+  {
+    quote:
+      "Tok med sønnen min første gang. Rolig og profesjonell behandling.",
+    name: "Silje",
+    location: "Oslo",
+  },
+];
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const faqItems: FaqItem[] = [
+  {
+    question: "Trenger jeg å bestille time?",
+    answer:
+      "Nei, vi tar drop in. Bare stikk innom når det passer.",
+  },
+  {
+    question: "Hva koster en klipp?",
+    answer:
+      "Herreklipp fra 350 kr, skinfade fra 380 kr. Se full prisliste på Tjenester-siden.",
+  },
+  {
+    question: "Klipper dere barn?",
+    answer: "Ja, vi tar barneklipp fra 280 kr.",
+  },
+  {
+    question: "Hva er åpningstidene?",
+    answer:
+      "Mandag til fredag 10-19, lørdag 10-17, søndag stengt.",
+  },
+  {
+    question: "Tar dere Vipps?",
+    answer: "Ja, vi tar Vipps, kort og kontanter.",
+  },
+];
+
+interface Step {
+  number: string;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const steps: Step[] = [
+  {
+    number: "01",
+    icon: <DoorOpen className="h-7 w-7" aria-hidden="true" />,
+    title: "Stikk innom",
+    description: "Ingen timebestilling. Kom når det passer deg.",
+  },
+  {
+    number: "02",
+    icon: <Scissors className="h-7 w-7" aria-hidden="true" />,
+    title: "Velg din stil",
+    description: "Fortell hva du vil ha. Vi rådgir gjerne.",
+  },
+  {
+    number: "03",
+    icon: <Smile className="h-7 w-7" aria-hidden="true" />,
+    title: "Gå ut fornøyd",
+    description: "Ferdig på 30 minutter. Alltid fast pris.",
+  },
+];
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Page
+   ────────────────────────────────────────────────────────────────────────── */
 
 export default function HomePage() {
   return (
     <>
-      {/* ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-[var(--black)]" aria-label="Hero">
-        {/* Desktop hero: barber_action_1 — hairdresser + customer */}
+      {/* ═══════ HERO ═══════ */}
+      <section
+        className="relative overflow-hidden bg-[var(--black)]"
+        aria-label="Hero"
+      >
+        {/* Desktop hero */}
         <div className="hidden md:block">
           <div className="relative h-[85vh] min-h-[600px]">
             <Image
@@ -41,7 +192,10 @@ export default function HomePage() {
                     Frisørsalong på Grønland i Oslo
                   </p>
                   <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
-                    <span className="inline-block h-2 w-2 rounded-full bg-green-400" aria-hidden="true" />
+                    <span
+                      className="inline-block h-2 w-2 rounded-full bg-green-400"
+                      aria-hidden="true"
+                    />
                     Drop in. Ingen timebestilling nødvendig
                   </div>
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -49,7 +203,7 @@ export default function HomePage() {
                       href="tel:+4746372323"
                       className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-blue-deep hover:shadow-lg hover:shadow-blue-primary/25"
                     >
-                      <PhoneIcon />
+                      <Phone className="h-5 w-5" aria-hidden="true" />
                       +47 46 37 23 23
                     </a>
                     <Link
@@ -57,7 +211,7 @@ export default function HomePage() {
                       className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-lg font-semibold text-white transition-colors hover:border-white/60 hover:bg-white/10"
                     >
                       Se priser
-                      <ArrowIcon />
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                   </div>
                 </div>
@@ -66,7 +220,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Mobile hero: interior_3 — intimate single station */}
+        {/* Mobile hero */}
         <div className="md:hidden">
           <div className="relative h-[75vh] min-h-[500px]">
             <Image
@@ -86,7 +240,10 @@ export default function HomePage() {
                 Frisørsalong på Grønland, Oslo
               </p>
               <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" aria-hidden="true" />
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full bg-green-400"
+                  aria-hidden="true"
+                />
                 Drop in velkommen
               </div>
               <div className="mt-6">
@@ -94,7 +251,7 @@ export default function HomePage() {
                   href="tel:+4746372323"
                   className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-primary px-6 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-deep"
                 >
-                  <PhoneIcon />
+                  <Phone className="h-5 w-5" aria-hidden="true" />
                   Ring oss: 46 37 23 23
                 </a>
               </div>
@@ -103,96 +260,156 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ VIBE STRIP ═══════════════════════════════════════════ */}
-      <section className="border-b border-blue-light bg-blue-lighter" aria-label="Fakta om Blue Frisør">
+      {/* ═══════ VIBE STRIP ═══════ */}
+      <section
+        className="border-b border-blue-light bg-blue-lighter"
+        aria-label="Fakta om Blue Frisør"
+      >
         <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-blue-light sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           <div className="flex items-center justify-center gap-3 px-6 py-5">
-            <StarIcon />
+            <Star
+              className="h-6 w-6 text-blue-primary"
+              aria-hidden="true"
+            />
             <div>
               <p className="text-lg font-bold text-foreground">4.8 / 5</p>
-              <p className="text-sm text-foreground/60">118+ Google-anmeldelser</p>
+              <p className="text-sm text-foreground/60">
+                118+ Google-anmeldelser
+              </p>
             </div>
           </div>
           <div className="flex items-center justify-center gap-3 px-6 py-5">
-            <MapPinIcon />
+            <MapPin
+              className="h-6 w-6 text-blue-primary"
+              aria-hidden="true"
+            />
             <div>
-              <p className="text-lg font-bold text-foreground">Grønland, Oslo</p>
-              <p className="text-sm text-foreground/60">Grønlandsleiret 18</p>
+              <p className="text-lg font-bold text-foreground">
+                Grønland, Oslo
+              </p>
+              <p className="text-sm text-foreground/60">
+                Grønlandsleiret 18
+              </p>
             </div>
           </div>
           <div className="flex items-center justify-center gap-3 px-6 py-5">
-            <WalkInIcon />
+            <DoorOpen
+              className="h-6 w-6 text-blue-primary"
+              aria-hidden="true"
+            />
             <div>
               <p className="text-lg font-bold text-foreground">Drop in</p>
-              <p className="text-sm text-foreground/60">Ingen timebestilling nødvendig</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════ SERVICES ═══════════════════════════════════════════ */}
-      <section className="py-16 sm:py-24" aria-labelledby="services-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
-            <div>
-              <h2
-                id="services-heading"
-                className="font-heading text-3xl font-bold text-foreground sm:text-4xl"
-              >
-                Våre tjenester
-              </h2>
-              <p className="mt-3 text-lg text-foreground/60">
-                Profesjonell frisør for alle. Fra klassisk klipp til presise fades.
+              <p className="text-sm text-foreground/60">
+                Ingen timebestilling nødvendig
               </p>
-
-              <div className="mt-8 grid gap-2">
-                {services.map((service) => (
-                  <div
-                    key={service.name}
-                    className="flex items-center justify-between rounded-lg border-l-4 border-blue-primary bg-white px-5 py-4 shadow-sm"
-                  >
-                    <span className="font-medium text-foreground">
-                      {service.name}
-                    </span>
-                    <span className="font-heading text-lg font-bold text-blue-primary">
-                      {service.price}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6">
-                <Link
-                  href="/tjenester"
-                  className="inline-flex items-center gap-2 text-blue-primary font-semibold transition-colors hover:text-blue-deep"
-                >
-                  Se alle tjenester med detaljer
-                  <ArrowIcon />
-                </Link>
-              </div>
-            </div>
-
-            {/* Barber action image */}
-            <div className="relative hidden lg:block">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-                <Image
-                  src="/images/barber_action_2.jpg"
-                  alt="Skjeggtrimming hos Blue Frisør — presisjon og håndverk"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-              </div>
-              {/* Decorative blue block */}
-              <div className="absolute -bottom-4 -left-4 -z-10 h-full w-full rounded-2xl bg-blue-light" aria-hidden="true" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ GALLERY PREVIEW ═══════════════════════════════════════════ */}
+      {/* ═══════ HOW IT WORKS ═══════ */}
+      <section className="py-16 sm:py-24" aria-labelledby="process-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2
+              id="process-heading"
+              className="font-heading text-3xl font-bold text-foreground sm:text-4xl"
+            >
+              Slik fungerer det
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-lg text-foreground/60">
+              Tre enkle steg. Ingen stress.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-0">
+            {steps.map((step, index) => (
+              <div key={step.number} className="relative flex flex-col items-center text-center">
+                {/* Connector line (desktop only, not on last item) */}
+                {index < steps.length - 1 && (
+                  <div
+                    className="absolute left-[calc(50%+3rem)] top-8 hidden h-[2px] w-[calc(100%-6rem)] bg-[var(--blue-light)] md:block"
+                    aria-hidden="true"
+                  />
+                )}
+
+                {/* Step number + icon */}
+                <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[var(--blue-lighter)] text-[var(--blue-primary)]">
+                  {step.icon}
+                  <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--blue-primary)] text-xs font-bold text-white">
+                    {step.number}
+                  </span>
+                </div>
+
+                {/* Text */}
+                <h3 className="mt-5 text-xl font-bold text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-2 max-w-xs text-foreground/60">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ SERVICES ═══════ */}
       <section
         className="bg-blue-lighter py-16 sm:py-24"
+        aria-labelledby="services-heading"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2
+              id="services-heading"
+              className="font-heading text-3xl font-bold text-foreground sm:text-4xl"
+            >
+              Våre tjenester
+            </h2>
+            <p className="mt-3 text-lg text-foreground/60">
+              Profesjonell frisør for alle. Fra klassisk klipp til presise
+              fades.
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <article
+                key={service.name}
+                className="group rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--blue-lighter)] text-[var(--blue-primary)] transition-colors group-hover:bg-[var(--blue-primary)] group-hover:text-white">
+                  {service.icon}
+                </div>
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {service.name}
+                </h3>
+                <p className="mt-1 text-sm text-foreground/60">
+                  {service.description}
+                </p>
+                <p className="mt-3 text-lg font-bold text-[var(--blue-primary)]">
+                  {service.price}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/tjenester"
+              className="inline-flex items-center gap-2 font-semibold text-[var(--blue-primary)] transition-colors hover:text-[var(--blue-deep)]"
+            >
+              Se alle tjenester med detaljer
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ GALLERY PREVIEW ═══════ */}
+      <section
+        className="py-16 sm:py-24"
         aria-labelledby="gallery-heading"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -212,7 +429,7 @@ export default function HomePage() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl sm:col-span-2 lg:col-span-1 lg:row-span-2 lg:aspect-auto lg:h-full">
               <Image
                 src="/images/interior_4.jpg"
-                alt="Blue Frisør interiør — takdekor, lysekrone og blå vegger"
+                alt="Blue Frisør interiør med takdekor, lysekrone og blå vegger"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 100vw, 100vw"
@@ -221,7 +438,7 @@ export default function HomePage() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
                 src="/images/interior_1.jpg"
-                alt="Oversiktsbilde av Blue Frisør — frisører i arbeid"
+                alt="Oversiktsbilde av Blue Frisør med frisører i arbeid"
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-105"
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -241,17 +458,108 @@ export default function HomePage() {
           <div className="mt-8 text-center">
             <Link
               href="/galleri"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-blue-primary shadow-sm transition-all hover:bg-blue-primary hover:text-white hover:shadow-md"
+              className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-[var(--blue-primary)] shadow-sm transition-all hover:bg-[var(--blue-primary)] hover:text-white hover:shadow-md"
             >
               Se hele galleriet
-              <ArrowIcon />
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════ CTA BAND ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-blue-primary" aria-label="Ring oss">
+      {/* ═══════ TESTIMONIALS ═══════ */}
+      <section
+        className="bg-[var(--black)] py-16 sm:py-24"
+        aria-labelledby="testimonials-heading"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2
+              id="testimonials-heading"
+              className="font-heading text-3xl font-bold text-white sm:text-4xl"
+            >
+              Hva kundene sier
+            </h2>
+            <p className="mt-3 text-lg text-white/60">
+              Ekte anmeldelser fra Google.
+            </p>
+          </div>
+
+          {/* Desktop: 3-col grid. Mobile: horizontal scroll */}
+          <div className="mt-10 flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+            {testimonials.map((t) => (
+              <article
+                key={t.name}
+                className="flex min-w-[280px] flex-shrink-0 flex-col rounded-xl bg-white/5 p-6 backdrop-blur-sm md:min-w-0"
+              >
+                {/* Stars */}
+                <div className="flex gap-1" aria-label="5 av 5 stjerner">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-[var(--gold-accent)] text-[var(--gold-accent)]"
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <blockquote className="mt-4 flex-1 text-white/90">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+
+                {/* Attribution */}
+                <div className="mt-5 border-t border-white/10 pt-4">
+                  <p className="font-semibold text-white">
+                    {t.name}, {t.location}
+                  </p>
+                  <p className="mt-1 text-sm text-white/50">
+                    Verifisert Google-anmeldelse
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ FAQ ═══════ */}
+      <section className="py-16 sm:py-24" aria-labelledby="faq-heading">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2
+              id="faq-heading"
+              className="font-heading text-3xl font-bold text-foreground sm:text-4xl"
+            >
+              Vanlige spørsmål
+            </h2>
+            <p className="mt-3 text-lg text-foreground/60">
+              Det du lurer på, besvart.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((item, index) => (
+                <AccordionItem key={index} value={`faq-${index}`}>
+                  <AccordionTrigger className="text-left text-base font-medium sm:text-lg">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-base">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ CTA BAND ═══════ */}
+      <section
+        className="relative overflow-hidden bg-blue-primary"
+        aria-label="Ring oss"
+      >
         {/* Subtle texture */}
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <Image
@@ -262,98 +570,45 @@ export default function HomePage() {
             sizes="100vw"
           />
         </div>
-        <div className="relative mx-auto max-w-4xl px-4 py-16 text-center sm:py-24">
-          <h2 className="font-heading text-3xl font-bold text-white sm:text-5xl">
-            Stikk innom på Grønland
-          </h2>
-          <p className="mt-4 text-lg text-white/80">
-            Bare stikk innom. Vi tar drop in, eller ring oss direkte.
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a
-              href="tel:+4746372323"
-              className="inline-flex items-center gap-3 rounded-lg bg-white px-10 py-5 text-xl font-bold text-blue-primary transition-all hover:bg-blue-light hover:shadow-lg"
-            >
-              <PhoneIcon />
-              +47 46 37 23 23
-            </a>
-            <Link
-              href="/kontakt"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white/40 px-8 py-5 text-lg font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
-            >
-              Finn oss
-              <ArrowIcon />
-            </Link>
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:py-24">
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+            {/* Left: headline + CTA */}
+            <div className="text-center md:text-left">
+              <h2 className="font-heading text-3xl font-bold text-white sm:text-5xl">
+                Kom innom i dag
+              </h2>
+              <p className="mt-4 text-lg text-white/80">
+                Bare stikk innom. Vi tar drop in, eller ring oss direkte.
+              </p>
+              <div className="mt-8">
+                <a
+                  href="tel:+4746372323"
+                  className="inline-flex items-center gap-3 rounded-lg bg-white px-10 py-5 text-xl font-bold text-[var(--blue-primary)] transition-all hover:bg-blue-light hover:shadow-lg"
+                >
+                  <Phone className="h-5 w-5" aria-hidden="true" />
+                  Ring oss: 46 37 23 23
+                </a>
+              </div>
+            </div>
+
+            {/* Right: trust mini-stats */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
+              <div className="rounded-lg bg-white/15 px-6 py-5 text-center backdrop-blur-sm">
+                <p className="text-2xl font-bold text-white">4.8 / 5</p>
+                <p className="mt-1 text-sm text-white/70">Google</p>
+              </div>
+              <div className="rounded-lg bg-white/15 px-6 py-5 text-center backdrop-blur-sm">
+                <p className="text-2xl font-bold text-white">7 dager</p>
+                <p className="mt-1 text-sm text-white/70">Åpent i uken</p>
+              </div>
+              <div className="rounded-lg bg-white/15 px-6 py-5 text-center backdrop-blur-sm">
+                <p className="text-2xl font-bold text-white">Drop in</p>
+                <p className="mt-1 text-sm text-white/70">Alltid OK</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </>
-  );
-}
-
-function StarIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-primary" aria-hidden="true">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
-  );
-}
-
-function MapPinIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-primary" aria-hidden="true">
-      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function WalkInIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-primary" aria-hidden="true">
-      <circle cx="12" cy="5" r="1" />
-      <path d="m9 20 3-6 3 6" />
-      <path d="m6 8 6 2 6-2" />
-      <path d="M12 10v4" />
-    </svg>
-  );
-}
-
-function PhoneIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
-}
-
-function ArrowIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
-    </svg>
   );
 }
