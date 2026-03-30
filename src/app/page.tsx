@@ -24,7 +24,7 @@ export default function HomePage() {
               src="/images/barber_action_1.jpg"
               alt="Frisør hos Blue Frisør styler en kundes hår"
               fill
-              className="object-cover object-[center_20%]"
+              className="object-cover object-[center_5%]"
               priority
               sizes="100vw"
             />
